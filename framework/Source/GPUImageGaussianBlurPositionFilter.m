@@ -46,7 +46,7 @@ NSString *const kGPUImageGaussianBlurPositionFragmentShaderString = SHADER_STRIN
  uniform highp float blurRadius;
  
  void main() {
-     highp vec2 textureCoordinateToUse = vec2(textureCoordinate.x, (textureCoordinate.y * aspectRatio + 0.5 - 0.5 * aspectRatio));
+     highp vec2 textureCoordinateToUse = vec2(textureCoordinate.x, textureCoordinate.y);
      highp float dist = distance(blurCenter, textureCoordinateToUse);
 
      if (dist < blurRadius)

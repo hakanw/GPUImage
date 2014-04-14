@@ -14,7 +14,7 @@ NSString *const kGPUImagePixellationPositionFragmentShaderString = SHADER_STRING
  
  void main()
  {
-     highp vec2 textureCoordinateToUse = vec2(textureCoordinate.x, (textureCoordinate.y * aspectRatio + 0.5 - 0.5 * aspectRatio));
+     highp vec2 textureCoordinateToUse = vec2(textureCoordinate.x, textureCoordinate.y);
      highp float dist = distance(pixelateCenter, textureCoordinateToUse);
 
      if (dist < pixelateRadius)
